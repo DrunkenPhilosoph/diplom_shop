@@ -1,0 +1,48 @@
+shop: Связной
+categories:
+  - id: 10
+    name: Перифирия
+  - id: 3
+    name: Жесткие диски
+  - id: 6
+    name: Мониторы
+  - id: 11
+    name: Комплектующие для клавиатуры
+
+goods:
+  - id: 222221
+    category: 10
+    model: keyboard/keychron/k3
+    name: Клавиатура Keychron
+    price: 11000
+    price_rrc: 12000
+    quantity: 14
+    parameters:
+      "Тип": Механическая
+      "Количество клавиш": 104
+      "Тип подключения": bluetooth
+      "Цвет": черный
+  - id: 222222
+    category: 10
+    model: keyboard/keychron/k2
+    name: Клавиатура Keychron
+    price: 8000
+    price_rrc: 10000
+    quantity: 20
+    parameters:
+      "Тип": Механическая
+      "Количество клавиш": 80
+      "Тип подключения": bluetooth/Кабель
+      "Цвет": Серый
+  - id: 222252
+    category: 11
+    model: keycaps
+    name: Кейкапы
+    price: 10
+    price_rrc: 20
+    quantity: 50000
+    parameters:
+      "Цвет": Белый
+      "Материал": pbt
+      "Русификациф": Есть
+

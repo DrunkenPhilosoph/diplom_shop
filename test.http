@@ -1,0 +1,122 @@
+### Регистрация нового пользователя (Магазин)
+POST http://127.0.0.1:8000/api/users/
+Content-Type: application/json
+
+{
+  "email": "clamerr@yandex.ru",
+  "username": "clamerr",
+  "password": "password123",
+  "user_type": "shop"
+}
+
+### Регистрация нового пользователя (Пользователь)
+POST http://127.0.0.1:8000/api/users/
+Content-Type: application/json
+
+{
+  "email": "clamerr@yandex.ru",
+  "username": "clamerr",
+  "password": "password123",
+  "user_type": "customer"
+}
+
+### Получение токена для пользователя
+POST http://127.0.0.1:8000/api-token-auth/
+Content-Type: application/json
+
+{
+  "username": "clamerr",
+  "password": "password123"
+}
+
+### Создание магазина
+POST http://127.0.0.1:8000/api/shops/
+Authorization: Token 7c83f3eff30485e6e2ae835c8db9ecd9dd2f93d6
+Content-Type: application/json
+
+{
+  "name": "New"
+}
+
+### Создание категории
+POST http://127.0.0.1:8000/api/categories/
+Authorization: Token 7c83f3eff30485e6e2ae835c8db9ecd9dd2f93d6
+Content-Type: application/json
+
+{
+  "name": "Electronics"
+}
+
+### Создание товара
+POST http://127.0.0.1:8000/api/products/
+Authorization: Token 7c83f3eff30485e6e2ae835c8db9ecd9dd2f93d6
+Content-Type: application/json
+
+{
+  "name": "Smartphone",
+  "price": 500.00,
+  "price_rrc": 550.00,
+  "quantity": 10,
+  "model": "Model X",
+  "category": 2,
+  "shop": "New",
+  "parameters": {
+    "color": "black",
+    "memory": "128GB"
+  }
+}
+
+### Просмотр списка товаров
+GET http://127.0.0.1:8000/api/products/
+
+
+### Добавление товара в корзину
+POST http://127.0.0.1:8000/api/carts/2/add_product/
+Authorization: Token 32545c448986fbf30661244cdbfcc864762d1326
+Content-Type: application/json
+
+{
+  "product_id": 1,
+  "quantity": 1
+}
+
+### Удаление товара из корзины
+POST http://127.0.0.1:8000/api/carts/1/remove_product/
+Authorization: Token 06ad26cad1c8e7af349c34dd3c08dabbfb1e1820
+Content-Type: application/json
+
+{
+  "product_id": 222252
+}
+
+### Создание заказа
+POST http://127.0.0.1:8000/api/orders/
+Authorization: Token 06ad26cad1c8e7af349c34dd3c08dabbfb1e1820
+Content-Type: application/json
+
+{
+  "user": 4,
+  "address": 1
+}
+
+### Подтверждение заказа
+POST http://127.0.0.1:8000/api/orders/3/confirm_order/
+Authorization: Token 06ad26cad1c8e7af349c34dd3c08dabbfb1e1820
+Content-Type: application/json
+
+### Создание адреса доставки
+POST http://127.0.0.1:8000/api/addresses/
+Authorization: Token 06ad26cad1c8e7af349c34dd3c08dabbfb1e1820
+Content-Type: application/json
+
+{
+  "user": 3,
+  "street": "Main St.",
+  "city": "Metropolis",
+  "postal_code": "12345",
+  "country": "Wonderland"
+}
+
+### Получение списка заказов
+GET http://127.0.0.1:8000/api/orders/
+Authorization: Token 06ad26cad1c8e7af349c34dd3c08dabbfb1e1820
